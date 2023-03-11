@@ -1,3 +1,4 @@
+import os
 from ultralytics import YOLO
 from PIL import Image
 from bs4 import BeautifulSoup
@@ -32,5 +33,5 @@ def upload():
     }
     return res
 
-if __name__=="main":
-    app.run(port=5000)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
